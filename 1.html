@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="UTF-8">
+     <title>正则表达式应用</title>
+     
+</head>
+<body>
+<div>判断给定数字是否为手机号码
+<input type="text" name="telephonenumber" id="telephonenumber"/>
+<input type="button" name="" value="确定" onclick="check1()">
+</div>
+<div>判断输入的字符串是否有相邻重复单词
+<input type="text" name="word" id="word"/>
+<input type="button" name="" value="确定" onclick="check2()">
+</div>
+</div>
+<script type="text/javascript">
+     function check1(){
+       var reg = new RegExp(/1[358][0-9]{9}/);
+       var obj = document.getElementById("telephonenumber");
+    if(!reg.test(obj.value)){
+        alert("您输入的不是手机号！");
+    }
+    else{
+    	alert("您的输入满足条件");
+    }
+}
+  function check2(){
+       var reg = new RegExp(/\s*(\b([a-zA-Z]+)\b\s)*\b([a-zA-Z]+)\b\s+\3\b(\s\b([a-zA-Z]+)\b)*\s*|\s*(\b([a-zA-Z]+-[a-zA-Z]+)\b\s)*\b([a-zA-Z]+-[a-zA-Z]+)\b\s+\3\b(\s\b([a-zA-Z]+-[a-zA-Z]+)\b)*\s*/);
+       var obj = document.getElementById("word");
+    if(!reg.test(obj.value)){
+        alert("输入的字符串没有相邻重复单词");
+    }
+    else{
+    	alert("您的输入满足条件");
+    }
+}
+</script>
+</body>
+</html>
